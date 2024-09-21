@@ -1,32 +1,35 @@
-// src/components/ticketpurchase/TicketPurchase.js
-import React, { useState } from 'react';
-import CrossOperator from '../../components/crossoperator/CrossOperator'; // Corrected the import path
-import WalletIntegration from '../../components/walletintegration/WalletIntegration';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Home.css'; // Optional: Create a CSS file for styling
 
-function TicketPurchase() {
-  const [operator, setOperator] = useState(null);
-  const [ticketCount, setTicketCount] = useState(1);
-
-  const handlePurchase = () => {
-    // Logic to handle ticket purchase
-  };
+function Home() {
+  const navigate = useNavigate();
 
   return (
-    <div>
-      <h2>Purchase Ticket</h2>
-      <CrossOperator setOperator={setOperator} />
-      <div>
-        <label>Number of Tickets:</label>
-        <input
-          type="number"
-          value={ticketCount}
-          onChange={(e) => setTicketCount(e.target.value)}
-          min="1"
-        />
+    <div className="home-page">
+     <div className="container">
+    <div className="home-container">
+
+    <div className="welcome-container">
+      <h1>Welcome to Transcoin Solutions</h1>
+      <p>
+        We are delighted to have you here. Our platform allows you to easily purchase tickets for your favorite bus operators.
+      </p>
+      <p>
+        Select your operator, choose the number of tickets, and enjoy your journey!
+      </p>
+      <div className="welcome-actions">
+        <button onClick={() => navigate('/operatordashboard')}>Purchase Ticket</button>
+        <button onClick={() => alert('Learn more about us')}>Learn More</button>
       </div>
-      <WalletIntegration onPurchase={handlePurchase} />
+    </div>
+    <div className="home-picture">
+      <img src="home-page.png"></img>
+    </div>
+    </div>
+     </div>
     </div>
   );
 }
 
-export default TicketPurchase;
+export default Home;

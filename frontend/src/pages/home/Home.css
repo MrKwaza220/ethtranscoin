@@ -1,0 +1,83 @@
+.home-page {
+  height: 90vh;
+  width: 100%;
+  background-color: #bedeeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 7px 7%;
+  width: 100%;
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.welcome-container {
+  text-align: start;
+  padding: 70px;
+  border-radius: 10px;
+  background-color: #488cd4;
+  color: #333;
+  flex: 1;
+}
+
+.home-picture img {
+  max-width: 100%; 
+  height: auto;
+  flex: 1; 
+  border-radius: 10px;
+}
+
+.welcome-actions button {
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  transition: background-color 0.3s;
+}
+.welcome-actions button:hover {
+  background-color: #bedeeb;
+}
+
+.welcome-container p{
+  font-size: 16px;
+  color: white;
+}
+
+.welcome-container h1 {
+  font-size: 60px;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column; /* Stack the content vertically on smaller screens */
+    text-align: center;
+  }
+
+  .welcome-container {
+    padding: 20px;
+  }
+
+  .welcome-container h1 {
+    font-size: 2.5rem; /* Adjust font size */
+  }
+
+  .home-picture img {
+    width: 100%; /* Ensure the image adapts on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-container h1 {
+    font-size: 2rem;
+  }
+}

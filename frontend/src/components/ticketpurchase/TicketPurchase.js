@@ -1,7 +1,6 @@
-// src/components/TicketPurchase.js
 import React, { useState } from 'react';
-import CrossOperator from './CrossOperator';
-import WalletIntegration from './WalletIntegration';
+import CrossOperator from '../../components/crossoperator/CrossOperator'; // Corrected the import path
+import WalletIntegration from '../../components/walletintegration/WalletIntegration';
 
 function TicketPurchase() {
   const [operator, setOperator] = useState(null);
@@ -9,6 +8,7 @@ function TicketPurchase() {
 
   const handlePurchase = () => {
     // Logic to handle ticket purchase
+    console.log(`Purchasing ${ticketCount} tickets for operator: ${operator}`);
   };
 
   return (

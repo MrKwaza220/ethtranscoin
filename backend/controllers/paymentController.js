@@ -1,23 +1,11 @@
 // controllers/paymentController.js
-const Ticket = require('../models/Ticket');
-const Transaction = require('../models/Transaction');
+const Ticket = require('../models/Ticket'); // Example model import
 
 exports.processPayment = async (req, res) => {
-  const { passengerName, busOperator, fare } = req.body;
-
   try {
-    // Create ticket
-    const ticket = await Ticket.create({ passengerName, busOperator, fare });
-
-    // Simulate payment processing and create transaction
-    const transaction = await Transaction.create({
-      ticketId: ticket._id,
-      amount: fare,
-      status: 'successful',
-    });
-
-    res.status(201).json({ ticket, transaction });
+    // Your payment processing logic here
+    res.status(200).json({ message: 'Payment processed successfully' });
   } catch (error) {
-    res.status(500).json({ message: 'Payment processing failed', error });
+    res.status(500).json({ error: error.message });
   }
 };

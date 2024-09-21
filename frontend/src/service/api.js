@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api', // Adjust the base URL as needed
+  baseURL: 'http://localhost:5000/api/tickets', 
 });
 
 export const fetchOperators = () => API.get('/operators');

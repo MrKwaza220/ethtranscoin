@@ -1,9 +1,8 @@
-// routes/paymentRoutes.js
 const express = require('express');
-const { processPayment } = require('../controllers/paymentController');
+const paymentController = require('../controllers/paymentController'); // Import the whole module
 
 const router = express.Router();
 
-router.post('/', processPayment);
+router.post('/payment', paymentController.processPayment); // Use the controller
 
 module.exports = router;
